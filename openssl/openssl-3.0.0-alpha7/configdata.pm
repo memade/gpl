@@ -42,8 +42,7 @@ our %config = (
     "MTFLAGS" => [
         "-nologo"
     ],
-    "PERL" => "C:\\Strawberry\\perl\\bin\\perl.exe",
-    "RANLIB" => "ranlib",
+    "PERL" => "C:\\Perl64\\bin\\perl.exe",
     "RC" => "rc",
     "RCFLAGS" => [],
     "afalgeng" => "",
@@ -216,14 +215,14 @@ our %config = (
         "OPENSSL_SYS_WIN64A"
     ],
     "openssldir" => "",
-    "options" => "--prefix=E:\\openssl_install_temp\\ no-afalgeng no-asan no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-devcryptoeng no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fuzz-afl no-fuzz-libfuzzer no-ktls no-md2 no-msan no-rc5 no-sctp no-ssl-trace no-ssl3 no-ssl3-method no-trace no-ubsan no-unit-test no-weak-ssl-ciphers no-zlib no-zlib-dynamic",
+    "options" => "--prefix=G:\\openssl_install_temp\\ no-afalgeng no-asan no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-devcryptoeng no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fuzz-afl no-fuzz-libfuzzer no-ktls no-md2 no-msan no-rc5 no-sctp no-ssl-trace no-ssl3 no-ssl3-method no-trace no-ubsan no-unit-test no-weak-ssl-ciphers no-zlib no-zlib-dynamic",
     "patch" => "0",
     "perl_archname" => "MSWin32-x64-multi-thread",
-    "perl_cmd" => "C:\\Strawberry\\perl\\bin\\perl.exe",
-    "perl_version" => "5.30.2",
+    "perl_cmd" => "C:\\Perl64\\bin\\perl.exe",
+    "perl_version" => "5.28.1",
     "perlargv" => [
         "VC-WIN64A",
-        "--prefix=E:\\openssl_install_temp\\"
+        "--prefix=G:\\openssl_install_temp\\"
     ],
     "perlenv" => {
         "AR" => undef,
@@ -261,7 +260,7 @@ our %config = (
         "__CNF_LDFLAGS" => undef,
         "__CNF_LDLIBS" => undef
     },
-    "prefix" => "E:\\openssl_install_temp\\",
+    "prefix" => "G:\\openssl_install_temp\\",
     "prerelease" => "-alpha7",
     "processor" => "",
     "rc4_int" => "unsigned int",
@@ -284,7 +283,7 @@ our %target = (
     "LDFLAGS" => "/nologo /debug",
     "MT" => "mt",
     "MTFLAGS" => "-nologo",
-    "RANLIB" => "CODE(0xee6380)",
+    "RANLIB" => "CODE(0x4913608)",
     "RC" => "rc",
     "_conf_fname_int" => [
         "Configurations\\00-base-templates.conf",
@@ -29932,14 +29931,14 @@ unless (caller) {
     if (scalar @ARGV == 0) {
         # With no arguments, re-create the build file
 
-        use lib 'E:/memade/gpl/openssl/openssl-3.0.0-alpha7/util/perl';
-        use OpenSSL::fallback 'E:/memade/gpl/openssl/openssl-3.0.0-alpha7/external/perl/MODULES.txt';
+        use lib 'G:/memade/gpl/openssl/openssl-3.0.0-alpha7/util/perl';
+        use OpenSSL::fallback 'G:/memade/gpl/openssl/openssl-3.0.0-alpha7/external/perl/MODULES.txt';
         use OpenSSL::Template;
 
         my $prepend = <<"_____";
 use File::Spec::Functions;
-use lib 'E:/memade/gpl/openssl/openssl-3.0.0-alpha7/util/perl';
-use lib 'E:/memade/gpl/openssl/openssl-3.0.0-alpha7/Configurations';
+use lib 'G:/memade/gpl/openssl/openssl-3.0.0-alpha7/util/perl';
+use lib 'G:/memade/gpl/openssl/openssl-3.0.0-alpha7/Configurations';
 use lib '.';
 use platform;
 _____
