@@ -71,9 +71,9 @@
         /* Link with Win32 static freeglut lib */
 #       if FREEGLUT_LIB_PRAGMAS
 #           ifdef NDEBUG
-#              pragma comment (lib, "freeglut_static.lib")
+#              pragma comment (lib, "freeglut.lib")
 #           else
-#              pragma comment (lib, "freeglut_staticd.lib")
+#              pragma comment (lib, "freeglut.lib")
 #           endif
 #       endif
 
@@ -91,7 +91,7 @@
 #               ifdef NDEBUG
 #                   pragma comment (lib, "freeglut.lib")
 #               else
-#                   pragma comment (lib, "freeglutd.lib")
+#                   pragma comment (lib, "freeglut.lib")
 #               endif
 #           endif
 
