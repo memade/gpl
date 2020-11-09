@@ -99,6 +99,11 @@ namespace DuiLib {
 		HWND m_hWnd;
 		WNDPROC m_OldWndProc;
 		bool m_bSubclassed;
+	protected:
+		bool FinalMessageFlag() { return !::InterlockedExchangeAdd(&m_FinalMessageFlag, 0); }
+		void FinalMessageFlag(const bool& flag) { ::InterlockedExchange(&m_FinalMessageFlag, flag ? 1 : 0); }
+	private:
+		volatile long m_FinalMessageFlag = 0;
 	};
 
 } // namespace DuiLib

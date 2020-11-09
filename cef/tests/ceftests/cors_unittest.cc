@@ -1,4 +1,4 @@
-// Copyright (c) 2020 The Chromium Embedded Framework Authors. All rights
+﻿// Copyright (c) 2020 The Chromium Embedded Framework Authors. All rights
 // reserved. Use of this source code is governed by a BSD-style license that
 // can be found in the LICENSE file.
 
@@ -1504,8 +1504,8 @@ struct PostResource : CookieResource {
       return !has_post_data && __method == "GET";
     } else {
       EXPECT_TRUE(has_post_data) << GetPathURL();
-      EXPECT_STREQ("POST", method.c_str()) << GetPathURL();
-      return has_post_data && method == "POST";
+      EXPECT_STREQ("POST", __method.c_str()) << GetPathURL();
+      return has_post_data && __method == "POST";
     }
   }
 };
