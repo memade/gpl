@@ -14,11 +14,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{FBCC4EC2-947F-3F34-932D-2E4B60FC2399}</ProjectGuid>
+    <ProjectGuid>{D540C232-865B-4D51-81F9-C93AD61458BA}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
-    <ProjectName>glfw</ProjectName>
+    <ProjectName>imgui</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -52,7 +52,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\Gpl\glfw\include;$(SolutionDir)..\Gpl\glfw\src;$(SolutionDir)..\Gpl\glfw\build\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\Gpl\imgui;$(SolutionDir)..\Gpl\imgui\backends;$(SolutionDir)..\Gpl\glfw\include;$(SolutionDir)..\Gpl\glad\include;$(SolutionDir)..\Gpl\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -61,9 +61,9 @@
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_GLFW_USE_CONFIG_H;_UNICODE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_UNICODE;FREEGLUT_STATIC;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
@@ -81,11 +81,12 @@
     </Midl>
     <Lib>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\bin\lib\x64\debug;</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\Gpl\glfw\include;$(SolutionDir)..\Gpl\glfw\src;$(SolutionDir)..\Gpl\glfw\build\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\Gpl\imgui;$(SolutionDir)..\Gpl\imgui\backends;$(SolutionDir)..\Gpl\glfw\include;$(SolutionDir)..\Gpl\glad\include;$(SolutionDir)..\Gpl\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>
       </ExceptionHandling>
@@ -94,7 +95,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_GLFW_USE_CONFIG_H;_UNICODE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;FREEGLUT_STATIC;_UNICODE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
@@ -114,38 +115,23 @@
     </Midl>
     <Lib>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\bin\lib\x64\release;</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="$(SolutionDir)..\Gpl\glfw\include\GLFW\glfw3.h" />
-    <ClInclude Include="$(SolutionDir)..\Gpl\glfw\include\GLFW\glfw3native.h" />
-    <ClInclude Include="$(SolutionDir)..\Gpl\glfw\src\internal.h" />
-    <ClInclude Include="$(SolutionDir)..\Gpl\glfw\src\mappings.h" />
-    <ClCompile Include="$(SolutionDir)..\Gpl\glfw\src\context.c" />
-    <ClCompile Include="$(SolutionDir)..\Gpl\glfw\src\init.c" />
-    <ClCompile Include="$(SolutionDir)..\Gpl\glfw\src\input.c" />
-    <ClCompile Include="$(SolutionDir)..\Gpl\glfw\src\monitor.c" />
-    <ClCompile Include="$(SolutionDir)..\Gpl\glfw\src\vulkan.c" />
-    <ClCompile Include="$(SolutionDir)..\Gpl\glfw\src\window.c" />
-    <ClInclude Include="$(SolutionDir)..\Gpl\glfw\src\win32_platform.h" />
-    <ClInclude Include="$(SolutionDir)..\Gpl\glfw\src\win32_joystick.h" />
-    <ClInclude Include="$(SolutionDir)..\Gpl\glfw\src\wgl_context.h" />
-    <ClInclude Include="$(SolutionDir)..\Gpl\glfw\src\egl_context.h" />
-    <ClInclude Include="$(SolutionDir)..\Gpl\glfw\src\osmesa_context.h" />
-    <ClCompile Include="$(SolutionDir)..\Gpl\glfw\src\win32_init.c" />
-    <ClCompile Include="$(SolutionDir)..\Gpl\glfw\src\win32_joystick.c" />
-    <ClCompile Include="$(SolutionDir)..\Gpl\glfw\src\win32_monitor.c" />
-    <ClCompile Include="$(SolutionDir)..\Gpl\glfw\src\win32_time.c" />
-    <ClCompile Include="$(SolutionDir)..\Gpl\glfw\src\win32_thread.c" />
-    <ClCompile Include="$(SolutionDir)..\Gpl\glfw\src\win32_window.c" />
-    <ClCompile Include="$(SolutionDir)..\Gpl\glfw\src\wgl_context.c" />
-    <ClCompile Include="$(SolutionDir)..\Gpl\glfw\src\egl_context.c" />
-    <ClCompile Include="$(SolutionDir)..\Gpl\glfw\src\osmesa_context.c" />
-    <ClInclude Include="$(SolutionDir)..\Gpl\glfw\build\src\glfw_config.h" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClCompile Include="..\backends\imgui_impl_dx10.cpp" />
+    <ClCompile Include="..\backends\imgui_impl_dx11.cpp" />
+    <ClCompile Include="..\backends\imgui_impl_dx12.cpp" />
+    <ClCompile Include="..\backends\imgui_impl_dx9.cpp" />
+    <ClCompile Include="..\backends\imgui_impl_glfw.cpp" />
+    <ClCompile Include="..\backends\imgui_impl_glut.cpp" />
+    <ClCompile Include="..\backends\imgui_impl_opengl2.cpp" />
+    <ClCompile Include="..\backends\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="..\backends\imgui_impl_win32.cpp" />
+    <ClCompile Include="..\imgui.cpp" />
+    <ClCompile Include="..\imgui_demo.cpp" />
+    <ClCompile Include="..\imgui_draw.cpp" />
+    <ClCompile Include="..\imgui_widgets.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

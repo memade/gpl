@@ -1,4 +1,4 @@
-// dear imgui, v1.80 WIP
+﻿// dear imgui, v1.80 WIP
 // (headers)
 
 // Help:
