@@ -1,0 +1,7 @@
+G:/memade/gpl/cef86021/build/CMakeFiles/ALL_BUILD.dir
+G:/memade/gpl/cef86021/build/CMakeFiles/ZERO_CHECK.dir
+G:/memade/gpl/cef86021/build/libcef_dll_wrapper/CMakeFiles/libcef_dll_wrapper.dir
+G:/memade/gpl/cef86021/build/tests/cefsimple/CMakeFiles/cefsimple.dir
+G:/memade/gpl/cef86021/build/tests/gtest/CMakeFiles/cef_gtest.dir
+G:/memade/gpl/cef86021/build/tests/ceftests/CMakeFiles/ceftests.dir
+G:/memade/gpl/cef86021/build/tests/cefclient/CMakeFiles/cefclient.dir
