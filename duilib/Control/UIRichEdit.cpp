@@ -286,12 +286,16 @@ namespace DuiLib {
 		cRefs = 1;
 
 		// Create and cache CHARFORMAT for this control
-		if(FAILED(InitDefaultCharFormat(re, &cf, NULL)))
-			goto err;
+		if (FAILED(InitDefaultCharFormat(re, &cf, NULL)))
+		{
+			return FALSE;
+		}
 
 		// Create and cache PARAFORMAT for this control
 		if(FAILED(InitDefaultParaFormat(re, &pf)))
-			goto err;
+		{
+			return FALSE;
+		}
 
 		// edit controls created without a window are multiline by default
 		// so that paragraph formats can be
@@ -343,7 +347,7 @@ namespace DuiLib {
 
 		if(FAILED(hr))
 		{
-			goto err;
+			return FALSE;
 		}
 
 		// Set window text
@@ -351,7 +355,9 @@ namespace DuiLib {
 		{
 #ifdef _UNICODE		
 			if(FAILED(pserv->TxSetText((TCHAR *)pcs->lpszName)))
-				goto err;
+			{
+				return FALSE;
+			}
 #else
 			size_t iLen = _tcslen(pcs->lpszName);
 			LPWSTR lpText = new WCHAR[iLen + 1];
@@ -366,9 +372,6 @@ namespace DuiLib {
 		}
 
 		return TRUE;
-
-err:
-		return FALSE;
 	}
 
 	/////////////////////////////////  IUnknown ////////////////////////////////

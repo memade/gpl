@@ -228,7 +228,10 @@ namespace DuiLib {
 			lpstrFind = new CDuiString(m_pQuerypInterface->QueryControlText(lpstrId, lpstrType));
 			m_mTextResourceHashMap.Insert(lpstrId, (LPVOID)lpstrFind);
 		}
-		return lpstrFind == NULL ? lpstrId : *lpstrFind;
+		if (lpstrFind == NULL)
+			return lpstrId;
+
+		return *lpstrFind;
 	}
 
 	void CResourceManager::ReloadText()

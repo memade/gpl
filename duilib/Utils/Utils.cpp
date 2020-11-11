@@ -468,8 +468,8 @@ namespace DuiLib
     {
 #ifdef _UNICODE
         if (!IsEmpty()) {
-            string nRet = CW2A(GetData());
-            return nRet;
+            auto nRet = CW2A(GetData());
+            return nRet.m_psz;
         }
         return "";
 #else
@@ -976,7 +976,7 @@ namespace DuiLib
 
 	LPCTSTR CStdStringPtrMap::GetAt(int iIndex) const
 	{
-		if( m_nBuckets == 0 || GetSize() == 0 ) return false;
+		if( m_nBuckets == 0 || GetSize() == 0 ) return nullptr;
 
 		int pos = 0;
 		int len = m_nBuckets;

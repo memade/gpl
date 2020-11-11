@@ -303,7 +303,8 @@ namespace DuiLib
 				}
 
 #if 1//! 为了在分割窗口设置调整大小的光标
-				if (IsEnabled() && ::PtInRect(&GetThumbRect(false), event.ptMouse)) {
+				RECT tempRtPtr = GetThumbRect(false);
+				if (IsEnabled() && ::PtInRect(&tempRtPtr, event.ptMouse)) {
 					::SetCursor(::LoadCursor(NULL, MAKEINTRESOURCE(IDC_SIZEWE)));
 					return;
 				}
