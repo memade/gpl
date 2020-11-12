@@ -1,1 +1,7 @@
 .vs/
+
+#CEF
+Debug.tar
+Release.tar
+cef_sandbox.lib
+libcef.lib
