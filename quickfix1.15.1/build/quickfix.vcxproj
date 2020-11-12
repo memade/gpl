@@ -52,7 +52,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\Gpl\quickfix1.15.1;$(SolutionDir)..\Gpl\quickfix1.15.1\src;$(SolutionDir)..\Gpl\quickfix1.15.1\src\C++;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\Gpl\quickfix1.15.1;$(SolutionDir)..\Gpl\quickfix1.15.1\src;$(SolutionDir)..\Gpl\quickfix1.15.1\src\C++;$(SolutionDir)..\gpl\openssl\openssl-3.0.0-alpha7\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -60,7 +60,7 @@
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
@@ -86,13 +86,13 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\Gpl\quickfix1.15.1;$(SolutionDir)..\Gpl\quickfix1.15.1\src;$(SolutionDir)..\Gpl\quickfix1.15.1\src\C++;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\Gpl\quickfix1.15.1;$(SolutionDir)..\Gpl\quickfix1.15.1\src;$(SolutionDir)..\Gpl\quickfix1.15.1\src\C++;$(SolutionDir)..\gpl\openssl\openssl-3.0.0-alpha7\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
@@ -119,6 +119,12 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\C++\SSLSocketAcceptor.h" />
+    <ClInclude Include="..\src\C++\SSLSocketConnection.h" />
+    <ClInclude Include="..\src\C++\SSLSocketInitiator.h" />
+    <ClInclude Include="..\src\C++\ThreadedSSLSocketAcceptor.h" />
+    <ClInclude Include="..\src\C++\ThreadedSSLSocketConnection.h" />
+    <ClInclude Include="..\src\C++\ThreadedSSLSocketInitiator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(SolutionDir)..\Gpl\quickfix1.15.1\src\C++\Acceptor.cpp" />
@@ -166,6 +172,12 @@
     <ClCompile Include="$(SolutionDir)..\Gpl\quickfix1.15.1\src\C++\ThreadedSocketInitiator.cpp" />
     <ClCompile Include="$(SolutionDir)..\Gpl\quickfix1.15.1\src\C++\TimeRange.cpp" />
     <ClCompile Include="$(SolutionDir)..\Gpl\quickfix1.15.1\src\C++\Utility.cpp" />
+    <ClCompile Include="..\src\C++\SSLSocketAcceptor.cpp" />
+    <ClCompile Include="..\src\C++\SSLSocketConnection.cpp" />
+    <ClCompile Include="..\src\C++\SSLSocketInitiator.cpp" />
+    <ClCompile Include="..\src\C++\ThreadedSSLSocketAcceptor.cpp" />
+    <ClCompile Include="..\src\C++\ThreadedSSLSocketConnection.cpp" />
+    <ClCompile Include="..\src\C++\ThreadedSSLSocketInitiator.cpp" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
