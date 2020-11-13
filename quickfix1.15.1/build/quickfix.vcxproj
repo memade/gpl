@@ -60,7 +60,7 @@
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
@@ -92,7 +92,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
@@ -118,14 +118,6 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
     </Lib>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\src\C++\SSLSocketAcceptor.h" />
-    <ClInclude Include="..\src\C++\SSLSocketConnection.h" />
-    <ClInclude Include="..\src\C++\SSLSocketInitiator.h" />
-    <ClInclude Include="..\src\C++\ThreadedSSLSocketAcceptor.h" />
-    <ClInclude Include="..\src\C++\ThreadedSSLSocketConnection.h" />
-    <ClInclude Include="..\src\C++\ThreadedSSLSocketInitiator.h" />
-  </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(SolutionDir)..\Gpl\quickfix1.15.1\src\C++\Acceptor.cpp" />
     <ClCompile Include="$(SolutionDir)..\Gpl\quickfix1.15.1\src\C++\DataDictionary.cpp" />
@@ -178,6 +170,7 @@
     <ClCompile Include="..\src\C++\ThreadedSSLSocketAcceptor.cpp" />
     <ClCompile Include="..\src\C++\ThreadedSSLSocketConnection.cpp" />
     <ClCompile Include="..\src\C++\ThreadedSSLSocketInitiator.cpp" />
+    <ClCompile Include="..\src\C++\UtilitySSL.cpp" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

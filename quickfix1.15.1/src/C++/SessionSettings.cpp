@@ -148,7 +148,16 @@ throw( ConfigError )
   validate( settings );
   m_settings[ sessionID ] = settings;
 }
-
+void SessionSettings::set_session_at(const SessionID& sessionID,
+	const Dictionary& settings)
+	throw(ConfigError)
+{
+	if (has(sessionID))
+	{
+        m_settings[sessionID] = settings;
+        m_settings[sessionID].merge(m_defaults);
+	}
+}
 void SessionSettings::set( const Dictionary& defaults ) throw( ConfigError ) 
 { 
   m_defaults = defaults;
@@ -187,5 +196,4 @@ throw( ConfigError )
     throw ConfigError( std::string(CONNECTION_TYPE) + " must be 'initiator' or 'acceptor'" );
   }
 }
-
 }

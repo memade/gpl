@@ -231,7 +231,8 @@ public:
   const Dictionary& get( const SessionID& ) const throw( ConfigError );
   /// Set a dictionary for a session
   void set( const SessionID&, Dictionary ) throw( ConfigError );
-
+  /// Set a dictionary for a session extern by Martell 20201113
+  void set_session_at(const SessionID&, const Dictionary&) throw(ConfigError);
   /// Get global default settings
   const Dictionary& get() const { return m_defaults; }
   /// Set global default settings
